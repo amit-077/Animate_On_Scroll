@@ -26,12 +26,38 @@ let delay = 0;
 
 scene.on("update", (e) => {
   scrollpos = e.scrollPos / 1000; // divided by 1000 bcoz we want in seconds
-  console.log(e);
+  // console.log(e);
 });
 
 setInterval(() => {
   delay += (scrollpos - delay) * accelamount;
-  console.log(scrollpos, delay);
+  // console.log(scrollpos, delay);
 
   video.currentTime = delay;
 }, 41.7);
+
+// opacity reducing of text.
+
+let opace = 150;
+let initialOpace = 150;
+
+// document.addEventListener("scroll", (e) => {
+//   opace--;
+//   document.querySelector(".text").style.opacity = opace / 180;
+//   document.querySelector(".text").style.fontSize = `${opace / 2}px`;
+// });
+
+var oldScrollY = window.scrollY;
+var directionText = document.getElementById("direction");
+window.onscroll = function (e) {
+  if (oldScrollY < window.scrollY) {
+    opace > 0 ? opace-- : null;
+    document.querySelector(".text").style.opacity = opace / 150;
+    document.querySelector(".text").style.fontSize = `${opace / 2}px`;
+  } else {
+    opace < initialOpace ? opace++ : null;
+    document.querySelector(".text").style.opacity = opace / 150;
+    document.querySelector(".text").style.fontSize = `${opace / 2}px`;
+  }
+  oldScrollY = window.scrollY;
+};
