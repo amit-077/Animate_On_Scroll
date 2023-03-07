@@ -18,12 +18,16 @@ body {
   object-fit: cover;
 }
 
-.intro h1{
-    position: absolute;
-    z-index: 1;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color: #fff;
-    font-size: 4rem;
+.textDiv {
+  position: absolute;
+  z-index: 1;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 2.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
+
