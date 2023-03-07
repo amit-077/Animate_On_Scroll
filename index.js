@@ -48,7 +48,6 @@ let initialOpace = 150;
 // });
 
 var oldScrollY = window.scrollY;
-var directionText = document.getElementById("direction");
 window.onscroll = function (e) {
   if (oldScrollY < window.scrollY) {
     opace > 0 ? opace-- : null;
